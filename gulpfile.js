@@ -4,7 +4,21 @@ var browserSync = require('browser-sync').create();
 var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
+var imagemin = require('gulp-imagemin');
+var cache = require('gulp-cache');
+var runSequence = require('run-sequence');
 
+
+////////// Clean Up //////////
+gulp.task('clean', function () {
+  return del.sync('dist').then(function(cd){
+    return cache.clearAll(cb);
+  });
+});
+
+gulp.task('clean:dist', function () {
+  return del.sync('dist');
+});
 
 ////////// Optimization //////////
 gulp.task('useref', function () {
@@ -15,6 +29,18 @@ gulp.task('useref', function () {
     .pipe(gulp.dest('dist'))
 });
 
+gulp.task('images', function () {
+  return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
+    .pipe(cache(imagemin({
+      interlaced: true
+    }))
+    .pipe(gulp.dest('dist/images'))
+});
+
+gulp.task('fonts', function () {
+  return gulp.src('app/fonts/**/*')
+    .pipe(gulp.dest('dist/fonts'))
+});
 
 ////////// Browser Sync //////////
 gulp.task('browserSync', function () {
@@ -37,13 +63,21 @@ gulp.task('sass', function(){
 
 
 ////////// Watches //////////
-gulp.task('watch', ['browserSync', 'sass'], function () {
+gulp.task('watch', function () {
   gulp.watch('app/scss/**/*.scss', ['sass']);
   gulp.watch('app/*.html', browserSync.reload);
   gulp.watch('app/js/**/*.js', browserSync.reload);
 });
 
-////////// Default //////////
-gulp.task('default', ['watch'], function(){
+////////// Build //////////
+gulp.task('build', function (callBack) {
+  runSequence('clean:dist',
+    ['sass', 'useref', 'images', 'fonts']
+    callBack
+  );
+});
 
+////////// Default //////////
+gulp.task('default', function(callBack){
+  runSequence(['sass', 'browserSync'], 'watch', callBack);
 });
