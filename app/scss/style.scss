@@ -1,1 +1,18 @@
-@include _bootstrap;
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap';
+
+
+#mainHeader {
+  @include make-md-column(12);
+  @include make-row();
+  background: red;
+}
+.topMenu {
+  @include make-row();
+  @include make-md-column(6);
+  @include center-block;
+}
+.mainNav {
+  @include make-row();
+  @include make-md-column(6);
+  @include center-block;
+}
