@@ -33,20 +33,23 @@ gulp.task('images', function () {
   return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
     .pipe(cache(imagemin({
       interlaced: true
-    }))
-    .pipe(gulp.dest('dist/images'))
+    })))
+    .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('fonts', function () {
   return gulp.src('app/fonts/**/*')
-    .pipe(gulp.dest('dist/fonts'))
+    .pipe(gulp.dest('dist/fonts'));
 });
 
 ////////// Browser Sync //////////
 gulp.task('browserSync', function () {
   browserSync.init({
     server: {
-      baseDir: 'app'
+      baseDir: 'app',
+      routes: {
+        "/bower_components": "bower_components"
+      }
     }
   })
 });
@@ -54,7 +57,9 @@ gulp.task('browserSync', function () {
 ////////// Styles //////////
 gulp.task('sass', function(){
   return gulp.src('app/scss/**/*.scss')
-    .pipe(sass())
+    .pipe(sass({
+      includePaths: 'bower_components/bootstrap-sass/assets/stylesheets/bootstrap'
+    }))
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
       stream: true
@@ -72,7 +77,7 @@ gulp.task('watch', function () {
 ////////// Build //////////
 gulp.task('build', function (callBack) {
   runSequence('clean:dist',
-    ['sass', 'useref', 'images', 'fonts']
+    ['sass', 'useref', 'images', 'fonts'],
     callBack
   );
 });

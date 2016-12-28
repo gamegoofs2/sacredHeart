@@ -1,0 +1,23 @@
+{
+  "name": "sacredheart",
+  "description": "Website for Sacred Heart Tutorials",
+  "main": "index.js",
+  "authors": [
+    "Evan Uebel"
+  ],
+  "license": "GPL",
+  "homepage": "https://github.com/gamegoofs2/sacredHeart",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7"
+  }
+}
