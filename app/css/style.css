@@ -5815,59 +5815,80 @@ button.close {
     display: none !important; } }
 
 #mainHeader {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: -15px;
-  margin-right: -15px;
-  background: red; }
-  @media (min-width: 992px) {
-    #mainHeader {
-      float: left;
-      width: 100%; } }
-  #mainHeader:before, #mainHeader:after {
-    content: " ";
-    display: table; }
-  #mainHeader:after {
-    clear: both; }
+  background-color: #e4e4e4;
+  height: 650px; }
 
 .topMenu {
-  margin-left: -15px;
-  margin-right: -15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-  .topMenu:before, .topMenu:after {
+  margin: auto;
+  width: 64%; }
+
+#topMenuUpper {
+  background-color: #494f51; }
+  #topMenuUpper:before, #topMenuUpper:after {
     content: " ";
     display: table; }
-  .topMenu:after {
+  #topMenuUpper:after {
     clear: both; }
-  @media (min-width: 992px) {
-    .topMenu {
-      float: left;
-      width: 50%; } }
+
+.orgItems {
+  color: #fff;
+  margin: 0;
+  padding-left: 2%;
+  list-style: none;
+  float: left;
+  width: 80%; }
+
+.siteItems {
+  float: right;
+  width: 20%;
+  color: #fff;
+  margin: 0;
+  padding-left: 2%;
+  list-style: none; }
+
+#topMenuUpper li:before {
+  content: "• ";
+  color: #b7b7b7;
+  margin-right: 3%; }
+
+#topMenuUpper li.firstItem:before {
+  content: " ";
+  margin-right: 0; }
+
+#topMenuUpper li {
+  float: left;
+  margin-left: 1%; }
+
+#topMenuUpper li.firstItem {
+  margin-left: 0;
+  list-style-type: none; }
+
+#topMenuUpper li a {
+  color: #fff; }
+
+li a:hover {
+  cursor: pointer; }
+
+.seperaterGradient {
+  height: 3px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#70c8de+0,66cd9c+30,ecbd47+68,ec784a+100 */
+  background: #70c8de;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #70c8de 0%, #66cd9c 30%, #ecbd47 68%, #ec784a 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #70c8de 0%, #66cd9c 30%, #ecbd47 68%, #ec784a 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #70c8de 0%, #66cd9c 30%, #ecbd47 68%, #ec784a 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70c8de', endColorstr='#ec784a',GradientType=1 );
+  /* IE6-9 */ }
+
+#topMenuLower {
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 3px #ececec; }
 
 .mainNav {
-  margin-left: -15px;
-  margin-right: -15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-  .mainNav:before, .mainNav:after {
-    content: " ";
-    display: table; }
-  .mainNav:after {
-    clear: both; }
-  @media (min-width: 992px) {
-    .mainNav {
-      float: left;
-      width: 50%; } }
+  margin: auto;
+  width: 62%; }
