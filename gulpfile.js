@@ -7,6 +7,7 @@ var gulpIf = require('gulp-if');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var runSequence = require('run-sequence');
+var plumber = require('gulp-plumber');
 
 
 ////////// Clean Up //////////
@@ -57,6 +58,7 @@ gulp.task('browserSync', function () {
 ////////// Styles //////////
 gulp.task('sass', function(){
   return gulp.src('app/scss/**/*.scss')
+    .pipe(plumber())
     .pipe(sass({
       includePaths: 'bower_components/bootstrap-sass/assets/stylesheets/bootstrap'
     }))

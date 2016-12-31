@@ -5840,16 +5840,18 @@ button.close {
 
 .siteItems {
   float: right;
-  width: 20%;
+  width: 19%;
   color: #fff;
   margin: 0;
-  padding-left: 2%;
   list-style: none; }
+
+#topMenuUpper .siteItems li.firstItem {
+  padding-right: 6%; }
 
 #topMenuUpper li:before {
   content: "• ";
   color: #b7b7b7;
-  margin-right: 3%; }
+  margin-right: 10px; }
 
 #topMenuUpper li.firstItem:before {
   content: " ";
@@ -5857,7 +5859,7 @@ button.close {
 
 #topMenuUpper li {
   float: left;
-  margin-left: 1%; }
+  padding-right: 2%; }
 
 #topMenuUpper li.firstItem {
   margin-left: 0;
@@ -5888,6 +5890,10 @@ li a:hover {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   box-shadow: 0 3px #ececec; }
+
+.topMenuLowerTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold; }
 
 .mainNav {
   margin: auto;
