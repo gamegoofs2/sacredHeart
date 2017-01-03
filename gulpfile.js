@@ -4,6 +4,7 @@ var browserSync = require('browser-sync').create();
 var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
+var del = require('del');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var runSequence = require('run-sequence');

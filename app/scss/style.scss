@@ -4,6 +4,14 @@ $mainHeaderBg: #e4e4e4;
 $topMenuUpperColor: #494f51;
 $topMenuLowerColor: #fff;
 
+@mixin no-gutter {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+@mixin no-gutter-col {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 #mainHeader {
   background-color: $mainHeaderBg;
   height: 650px;
@@ -11,10 +19,12 @@ $topMenuLowerColor: #fff;
 .topMenu {
   margin: auto;
   width: 64%;
+  @include container-fixed();
 }
 #topMenuUpper {
   background-color: $topMenuUpperColor;
-  @include clearfix();
+  @include make-row();
+  @include no-gutter();
 }
 .orgItems {
   color: #fff;
@@ -58,6 +68,8 @@ li a:hover {
   cursor: pointer;
 }
 .seperaterGradient {
+  @include make-row();
+  @include no-gutter;
   height: 3px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#70c8de+0,66cd9c+30,ecbd47+68,ec784a+100 */
   background: #70c8de; /* Old browsers */
@@ -71,10 +83,46 @@ li a:hover {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   box-shadow: 0 3px #ececec;
+  float: left;
+  width: 100%;
+  @include make-row();
+  @include no-gutter;
 }
-.topMenuLowerTitle {
+.logo {
+  @include make-sm-column(5);
+  @include no-gutter-col;
   font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
+  font-size: 20px;
+  margin-left: 2%;
+  float: left;
+  a {
+    color: #c8c6c6;
+    text-decoration: none;
+  }
+
+}
+.topMenuLowerSite {
+  @include make-sm-column(6);
+  @include no-gutter-col;
+  float: right;
+  width: 41%;
+  .topMenuLowerSiteMenu {
+    @include clearfix();
+    list-style: none;
+    margin-right: 2%;
+    li {
+      float: left;
+      margin-right: 2%;
+      a {
+        color: #c8c6c6;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .current {
+        color: #868585;
+      }
+    }
+  }
 }
 .mainNav {
   margin: auto;

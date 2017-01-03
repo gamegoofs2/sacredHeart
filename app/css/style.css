@@ -5820,10 +5820,23 @@ button.close {
 
 .topMenu {
   margin: auto;
-  width: 64%; }
+  width: 64%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px; }
+  .topMenu:before, .topMenu:after {
+    content: " ";
+    display: table; }
+  .topMenu:after {
+    clear: both; }
 
 #topMenuUpper {
-  background-color: #494f51; }
+  background-color: #494f51;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
   #topMenuUpper:before, #topMenuUpper:after {
     content: " ";
     display: table; }
@@ -5872,6 +5885,10 @@ li a:hover {
   cursor: pointer; }
 
 .seperaterGradient {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   height: 3px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#70c8de+0,66cd9c+30,ecbd47+68,ec784a+100 */
   background: #70c8de;
@@ -5884,16 +5901,78 @@ li a:hover {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70c8de', endColorstr='#ec784a',GradientType=1 );
   /* IE6-9 */ }
+  .seperaterGradient:before, .seperaterGradient:after {
+    content: " ";
+    display: table; }
+  .seperaterGradient:after {
+    clear: both; }
 
 #topMenuLower {
   background-color: #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  box-shadow: 0 3px #ececec; }
+  box-shadow: 0 3px #ececec;
+  float: left;
+  width: 100%;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+  #topMenuLower:before, #topMenuLower:after {
+    content: " ";
+    display: table; }
+  #topMenuLower:after {
+    clear: both; }
 
-.topMenuLowerTitle {
+.logo {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   font-family: 'Montserrat', sans-serif;
-  font-weight: bold; }
+  font-size: 20px;
+  margin-left: 2%;
+  float: left; }
+  @media (min-width: 768px) {
+    .logo {
+      float: left;
+      width: 41.66667%; } }
+  .logo a {
+    color: #c8c6c6;
+    text-decoration: none; }
+
+.topMenuLowerSite {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  float: right;
+  width: 41%; }
+  @media (min-width: 768px) {
+    .topMenuLowerSite {
+      float: left;
+      width: 50%; } }
+  .topMenuLowerSite .topMenuLowerSiteMenu {
+    list-style: none;
+    margin-right: 2%; }
+    .topMenuLowerSite .topMenuLowerSiteMenu:before, .topMenuLowerSite .topMenuLowerSiteMenu:after {
+      content: " ";
+      display: table; }
+    .topMenuLowerSite .topMenuLowerSiteMenu:after {
+      clear: both; }
+    .topMenuLowerSite .topMenuLowerSiteMenu li {
+      float: left;
+      margin-right: 2%; }
+      .topMenuLowerSite .topMenuLowerSiteMenu li a {
+        color: #c8c6c6;
+        font-size: 15px;
+        font-weight: bold; }
+      .topMenuLowerSite .topMenuLowerSiteMenu li .current {
+        color: #868585; }
 
 .mainNav {
   margin: auto;
