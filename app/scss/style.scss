@@ -15,10 +15,14 @@ $topMenuLowerColor: #fff;
 #mainHeader {
   background-color: $mainHeaderBg;
   height: 650px;
+  position: relative;
+  @include container-fixed();
+  @include no-gutter-col;
 }
 .topMenu {
   margin: auto;
   width: 64%;
+  @include make-row();
   @include container-fixed();
 }
 #topMenuUpper {
@@ -94,6 +98,8 @@ li a:hover {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   margin-left: 2%;
+  margin-top: 1%;
+  margin-bottom: 1%;
   float: left;
   a {
     color: #c8c6c6;
@@ -102,17 +108,16 @@ li a:hover {
 
 }
 .topMenuLowerSite {
+  width: 52% !important;
   @include make-sm-column(6);
   @include no-gutter-col;
-  float: right;
-  width: 41%;
   .topMenuLowerSiteMenu {
     @include clearfix();
-    list-style: none;
     margin-right: 2%;
+    margin-top: 2%;
     li {
       float: left;
-      margin-right: 2%;
+      margin-right: 5%;
       a {
         color: #c8c6c6;
         font-size: 15px;
@@ -122,9 +127,62 @@ li a:hover {
         color: #868585;
       }
     }
+    li:nth-child(2) {
+      color: #edbf47;
+    }
+    li:nth-child(3) {
+      color: #eb774b;
+    }
+    li:nth-child(4) {
+      color: #6fc191;
+    }
+    li:nth-child(5) {
+      color: #73cde3;
+    }
+    li:nth-child(6) {
+      color: #eb774b;
+    }
+    li.firstItem {
+      list-style: none;
+    }
   }
 }
 .mainNav {
-  margin: auto;
-  width: 62%;
+  @include make-row();
+  @include container-fixed();
+  @include no-gutter-col;
+  position: absolute;
+  bottom:0;
+  left: 20%;
+  background-color: #6fc191;
+  height: 140px;
+  width: 58%;
+  border-top-left-radius:  5px;
+  border-top-right-radius: 5px;
+  ul {
+    list-style: none;
+    display: block;
+    @include make-sm-column(12);
+    @include no-gutter-col;
+    li {
+      @include make-sm-column(3);
+      height: 100%;
+      display: block;
+      float: left;
+    }
+    li:nth-child(1) {
+      background-color: #6fc191;
+      border-top-left-radius: 5px;
+    }
+    li:nth-child(2) {
+      background-color: #73cde3;
+    }
+    li:nth-child(3) {
+      background-color: #edbf47;
+    }
+    li:nth-child(4) {
+      background-color: #eb774b;
+      border-top-right-radius: 5px;
+    }
+  }
 }
