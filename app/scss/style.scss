@@ -108,7 +108,7 @@ li a:hover {
 
 }
 .topMenuLowerSite {
-  width: 52% !important;
+  width: 56% !important;
   @include make-sm-column(6);
   @include no-gutter-col;
   .topMenuLowerSiteMenu {
@@ -155,7 +155,7 @@ li a:hover {
   bottom:0;
   left: 20%;
   background-color: #6fc191;
-  height: 140px;
+  height: 102px;
   width: 58%;
   border-top-left-radius:  5px;
   border-top-right-radius: 5px;
@@ -166,23 +166,106 @@ li a:hover {
     @include no-gutter-col;
     li {
       @include make-sm-column(3);
-      height: 100%;
+      height: 102px;
       display: block;
-      float: left;
+      position: relative;
+      a {
+        color: #fff;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding-top: 18%;
+        display: inline-block;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: normal;
+        font-size: 24px;
+        position: relative;
+      }
+      i {
+        position: absolute;
+        font-size: 130px;
+      }
+      .spyglass {
+        color: #6ab78a;
+        top: -55px;
+        left: -18px;
+      }
+      .attention {
+        color: #6fc4d9;
+        top: -45px;
+        left: -36px;
+        font-size: 120px;
+      }
+      .music {
+        color: #e0b74e;
+        top: -53px;
+        left: -30px;
+      }
+      .people {
+        color: #df754d;
+        top: -50px;
+        left: -22px;
+        font-size: 120px;
+      }
     }
     li:nth-child(1) {
       background-color: #6fc191;
       border-top-left-radius: 5px;
+      z-index: 5;
     }
     li:nth-child(2) {
       background-color: #73cde3;
+      z-index: 4;
     }
     li:nth-child(3) {
       background-color: #edbf47;
+      z-index: 3;
     }
     li:nth-child(4) {
       background-color: #eb774b;
       border-top-right-radius: 5px;
+    }
+  }
+}
+.activity {
+  @include make-row();
+  @include no-gutter;
+  height: 760px;
+  font-family: 'Montserrat', sans-serif;
+  .activityList {
+    height: 510px;
+    margin-left: 21%;
+    margin-top: 2%;
+    header {
+      @include make-row();
+      @include no-gutter-col;
+      color: #868585;
+      h2 {
+        margin-top: 0;
+      }
+      h4 {
+        color: #b7b7b7;
+      }
+      .colorBar {
+        width: 5%;
+        height: 5px;
+        background-color: #edbf47;
+        display: block;
+        border-radius: 5px;
+      }
+    }
+    .activityEvent {
+      @include make-row();
+      margin-top: 3%;
+      .event { //NO MORE NESTING!! >:(
+        @include make-md-column(4);
+        .eventIcon {
+          width: 83px;
+          height: 86px;
+          background-color: #ecbd47;
+        }
+      }
     }
   }
 }

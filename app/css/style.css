@@ -5965,7 +5965,7 @@ li a:hover {
     text-decoration: none; }
 
 .topMenuLowerSite {
-  width: 52% !important;
+  width: 56% !important;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -6019,7 +6019,7 @@ li a:hover {
   bottom: 0;
   left: 20%;
   background-color: #6fc191;
-  height: 140px;
+  height: 102px;
   width: 58%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px; }
@@ -6051,20 +6051,116 @@ li a:hover {
       min-height: 1px;
       padding-left: 15px;
       padding-right: 15px;
-      height: 100%;
+      height: 102px;
       display: block;
-      float: left; }
+      position: relative; }
       @media (min-width: 768px) {
         .mainNav ul li {
           float: left;
           width: 25%; } }
+      .mainNav ul li a {
+        color: #fff;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding-top: 18%;
+        display: inline-block;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: normal;
+        font-size: 24px;
+        position: relative; }
+      .mainNav ul li i {
+        position: absolute;
+        font-size: 130px; }
+      .mainNav ul li .spyglass {
+        color: #6ab78a;
+        top: -55px;
+        left: -18px; }
+      .mainNav ul li .attention {
+        color: #6fc4d9;
+        top: -45px;
+        left: -36px;
+        font-size: 120px; }
+      .mainNav ul li .music {
+        color: #e0b74e;
+        top: -53px;
+        left: -30px; }
+      .mainNav ul li .people {
+        color: #df754d;
+        top: -50px;
+        left: -22px;
+        font-size: 120px; }
     .mainNav ul li:nth-child(1) {
       background-color: #6fc191;
-      border-top-left-radius: 5px; }
+      border-top-left-radius: 5px;
+      z-index: 5; }
     .mainNav ul li:nth-child(2) {
-      background-color: #73cde3; }
+      background-color: #73cde3;
+      z-index: 4; }
     .mainNav ul li:nth-child(3) {
-      background-color: #edbf47; }
+      background-color: #edbf47;
+      z-index: 3; }
     .mainNav ul li:nth-child(4) {
       background-color: #eb774b;
       border-top-right-radius: 5px; }
+
+.activity {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  height: 760px;
+  font-family: 'Montserrat', sans-serif; }
+  .activity:before, .activity:after {
+    content: " ";
+    display: table; }
+  .activity:after {
+    clear: both; }
+  .activity .activityList {
+    height: 510px;
+    margin-left: 21%;
+    margin-top: 2%; }
+    .activity .activityList header {
+      margin-left: -15px;
+      margin-right: -15px;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      color: #868585; }
+      .activity .activityList header:before, .activity .activityList header:after {
+        content: " ";
+        display: table; }
+      .activity .activityList header:after {
+        clear: both; }
+      .activity .activityList header h2 {
+        margin-top: 0; }
+      .activity .activityList header h4 {
+        color: #b7b7b7; }
+      .activity .activityList header .colorBar {
+        width: 5%;
+        height: 5px;
+        background-color: #edbf47;
+        display: block;
+        border-radius: 5px; }
+    .activity .activityList .activityEvent {
+      margin-left: -15px;
+      margin-right: -15px;
+      margin-top: 3%; }
+      .activity .activityList .activityEvent:before, .activity .activityList .activityEvent:after {
+        content: " ";
+        display: table; }
+      .activity .activityList .activityEvent:after {
+        clear: both; }
+      .activity .activityList .activityEvent .event {
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px; }
+        @media (min-width: 992px) {
+          .activity .activityList .activityEvent .event {
+            float: left;
+            width: 33.33333%; } }
+        .activity .activityList .activityEvent .event .eventIcon {
+          width: 83px;
+          height: 86px;
+          background-color: #ecbd47; }
